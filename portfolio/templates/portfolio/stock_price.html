@@ -7,8 +7,26 @@
         <title>Stock Price</title>
     </head>
     <body>
-        <h1>Stock Price for {{ ticker }}</h1>
-        <p>Last Price: ${{ last_price }}</p>
+
+        {% if message is None %}
+            <h1 class="my-2 mx-3">Stock Price for {{ ticker }}</h1>
+        {% else %}
+            <h1 class="my-2 mx-3">Error</h1>
+        {% endif %}
+
+
+        <div>
+            {% if message is None %}
+                <p class="my-2 mx-3" style="font-size: 20px;">Last Price: ${{ last_price|floatformat:2 }}</p>
+            {% else %}
+                <p class="my-2 mx-3" style="font-size: 20px;">{{ message }}</p>
+            {% endif %}
+        </div>
+
+        <div>
+            <a class="btn btn-primary my-2 mx-3" href="{% url 'take_in_stock_price' %}">Back</a>
+        </div>
+
     </body>
     </html>
 {% endblock %}
