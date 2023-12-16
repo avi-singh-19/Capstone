@@ -1,0 +1,14 @@
+{% extends "portfolio/layout.html" %}
+
+{% block body %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Stock Price</title>
+    </head>
+    <body>
+        <h1>Stock Price for {{ ticker }}</h1>
+        <p>Last Price: ${{ last_price }}</p>
+    </body>
+    </html>
+{% endblock %}

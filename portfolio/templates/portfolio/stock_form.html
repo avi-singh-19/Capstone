@@ -1,0 +1,18 @@
+{% extends "portfolio/layout.html" %}
+
+{% block body %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Stock Ticker Form</title>
+    </head>
+    <body>
+        <h1>Enter Stock Ticker</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+    </html>
+{% endblock %}
