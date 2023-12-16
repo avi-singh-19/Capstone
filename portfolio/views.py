@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import StockTickerForm
+from .models import Stock
 import yfinance as yf
 import pandas as pd
 import plotly.graph_objects as go
@@ -25,6 +26,12 @@ def take_in_stock_price(request):
             ticker = form.cleaned_data['ticker']
             stock_data = yf.Ticker(ticker)
             historical_data = stock_data.history(period='1d', interval='2m')
+
+            stock_obj, created = Stock.objects.get_or_create(ticker=ticker)
+            if created:
+                stock_obj.company_name = ticker
+            stock_obj.save()
+            previous_searches = Stock.objects.all().order_by("date_searched").reverse()
 
             if not historical_data.empty and 'Close' in historical_data:
                 last_price = historical_data['Close'].iloc[-1]
@@ -53,7 +60,8 @@ def take_in_stock_price(request):
                 'ticker': ticker,
                 'last_price': last_price,
                 'message': message,
-                'graph_div': graph_div
+                'graph_div': graph_div,
+                'previous_searches': previous_searches
             })
 
     return render(request, 'portfolio/stock_form.html', {'form': form})
