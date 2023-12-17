@@ -65,3 +65,7 @@ def take_in_stock_price(request):
             })
 
     return render(request, 'portfolio/stock_form.html', {'form': form})
+
+
+def wordle_game(request):
+    return render(request, 'portfolio/wordle.html')
