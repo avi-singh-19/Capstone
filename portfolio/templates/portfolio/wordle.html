@@ -4,13 +4,8 @@
 {% block body %}
     <h1 class="my-2 mx-3">Wordle</h1>
 
-    <div id="game">
+    <div class="grid-container" id="game"></div>
+    <div class="button-container" id="refresh"></div>
 
-    </div>
-
-
-
-    <body>
-        <script src="{% static 'portfolio/js/wordle.js' %}" type="module"></script>
-    </body>
+    <script src="{% static 'portfolio/js/wordle.js' %}" type="module"></script>
 {% endblock %}

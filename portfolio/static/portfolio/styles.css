@@ -4,8 +4,8 @@ body {
 }
 
 :root {
-  --default: #121213;
-  --empty: #3a3a3c;
+  --default: #57575c;
+  --empty: #7d7d82;
   --wrong: #b59f3b;
   --right: #538d4e;
 }
@@ -19,11 +19,17 @@ body {
   height: 72vh;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -75px; /* Adjust this value to move the button up or down */
+}
+
 .grid-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh; /* Adjust the height as needed */
 }
 
 .grid {
@@ -36,6 +42,7 @@ body {
   width: 60px;
   height: 60px;
   border: 2px solid var(--empty);
+  border-radius: 7px;
   margin: 4px;
   color: black;
   text-transform: uppercase;
