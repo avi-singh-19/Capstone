@@ -19,7 +19,10 @@ def personal_interests(request):
 
 
 def take_in_stock_price(request):
-    form = StockTickerForm()  # Initialize form outside the conditional block
+    form = StockTickerForm()
+    all_searches = Stock.objects.all().order_by("-date_searched")
+    previous_searches = all_searches[:10]
+
     if request.method == 'POST':
         form = StockTickerForm(request.POST)
         if form.is_valid():
@@ -64,7 +67,10 @@ def take_in_stock_price(request):
                 'previous_searches': previous_searches
             })
 
-    return render(request, 'portfolio/stock_form.html', {'form': form})
+    return render(request, 'portfolio/stock_form.html', {
+        'form': form,
+        'previous_searches': previous_searches
+    })
 
 
 def wordle_game(request):
