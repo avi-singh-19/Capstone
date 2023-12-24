@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .forms import StockTickerForm
 from .models import Stock
 import yfinance as yf
-import pandas as pd
 import plotly.graph_objects as go
 
 
