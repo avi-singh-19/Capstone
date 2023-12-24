@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .forms import StockTickerForm
 from .models import Stock
+from django.conf import settings
+import os
 import yfinance as yf
 import plotly.graph_objects as go
 
@@ -10,7 +12,18 @@ def index(request):
 
 
 def professional_details(request):
-    return render(request, "portfolio/professional_details.html")
+    solirius = os.path.join(settings.BASE_DIR, 'portfolio/static/portfolio/text/solirius.txt')
+    with open(solirius, 'r') as file:
+        solirius_content = file.read()
+
+    birmingham = os.path.join(settings.BASE_DIR, 'portfolio/static/portfolio/text/birmingham.txt')
+    with open(birmingham, 'r') as file:
+        birmingham_content = file.read()
+
+    return render(request, "portfolio/professional_details.html", {
+        'solirius_description': solirius_content,
+        'birmingham_description': birmingham_content
+    })
 
 
 def personal_interests(request):

@@ -1,0 +1,4 @@
+Avi is a software engineer at Solirius Consulting, passionate about automation testing and development. Solirius are a London based consultancy, providing technological expertise to clients in the public and private sector, consulting in website development to data science.
+Avi is currently working with Ruby on Rails, Python and Javascript with focus on manual and automation testing and website development for one of Solirius' clients, namely HM Courts & Tribunals Service (HMCTS) in London.
+Within his time working here, Avi has also worked in technical project delivery teams to deliver data processing applications to Publicis, a marketing and digital transformation business made up of 5,000 talented and versatile people with expertise in media, creative, influence, technology and data, working across 21 agencies.
+Avi has extensively used Ruby, Python and Azure DevOps to write and test new and existing code.

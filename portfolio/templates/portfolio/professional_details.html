@@ -1,6 +1,43 @@
 {% extends "portfolio/layout.html" %}
+{% load static %}
 
 {% block body %}
-    <h1 class="my-2 mx-3 text-center fade-in">Professional Details</h1>
+    <h1 class="my-2 mx-3 text-center fade-in">My Professional Journey</h1>
     <br>
+
+    <div class="d-flex justify-content-center">
+        <div class="card my-2 mx-3 fade-in" style="max-width: 750px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{% static 'portfolio/images/solirius.png' %}" class="my-3 mx-3 img-fluid rounded-start">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h4 class="card-title">Solirius Consulting</h4>
+                <h5 class="card-title"><small class="text-body-secondary">November 2022 - Present</small></h5>
+                <p class="card-text">{{ solirius_description }}</p>
+                <a href="https://www.solirius.com" type="button" class="btn btn-primary" target="_blank">Click here to learn about Solirius</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="card my-2 mx-3 fade-in" style="max-width: 750px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{% static 'portfolio/images/birmingham.png' %}" class="my-3 mx-3 img-fluid rounded-start">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h4 class="card-title">The University of Birmingham</h4>
+                <h5 class="card-title"><small class="text-body-secondary">September 2019 - November 2022</small></h5>
+                <p class="card-text">{{ birmingham_description }}</p>
+                <a href="https://www.birmingham.ac.uk/index.aspx" type="button" class="btn btn-primary" target="_blank">Click here to learn about The University of Birmingham</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
 {% endblock %}

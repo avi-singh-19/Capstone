@@ -1,0 +1,4 @@
+Avi's passion for engineering, logic and computer science led him to study Electronic and Electrical Engineering at the University of Birmingham, one of the UK's leading engineering schools.
+During his first year studying at university, Avi learned fundamental programming language skills in C, scoring a first class grade in 'Introduction to Programming for Engineers with C', and from there
+he continued his studies taking a liking to the programming parts of the university's course. As a result, Avi ended up completing his final project in Python, where he used a Raspberry Pi and a camera module to
+create a portable facial recognition system which was designed to be a hands free, COVID safe security mechanism for the engineering laboratories. Avi graduated with a 2:1 grade in the summer of 2022.
