@@ -8,7 +8,13 @@ import plotly.graph_objects as go
 
 
 def index(request):
-    return render(request, "portfolio/index.html")
+    welcome = os.path.join(settings.BASE_DIR, 'portfolio/static/portfolio/text/welcome.txt')
+    with open(welcome, 'r') as file:
+        welcome_content = file.read()
+
+    return render(request, "portfolio/index.html",{
+        'welcome_text': welcome_content
+    })
 
 
 def professional_details(request):

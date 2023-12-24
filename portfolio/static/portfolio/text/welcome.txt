@@ -1,0 +1,7 @@
+This is Avi's capstone project for Harvard CS50's Web Programming with Python and Javascript course. This project uses Python and Javascript to handle the
+website's back and front end capabilities. Originally, the first designs involved making the website into a professional, portfolio style website with personal details of
+Avi's professional career so far and some details of his personal interests. However, for a bit of fun and to add some complexity to the application, Avi remade his
+stock price lookup and plot tool that he submitted as part of CS50's Introduction to Programming with Python to incorporate into this website with some added
+functionality and more user-friendly error handling, and he made a clone of the free online word game 'Wordle', but with new words every single game to keep you playing
+all day. More details about the application's functionality, the technical Python and Javascript details and the types of tests undertaken can be found in the committed
+'README' file on the project GitHub repository. Avi hopes you enjoy looking around this web app.
