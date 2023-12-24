@@ -9,25 +9,25 @@
     <body>
 
         {% if message is None %}
-            <h1 class="my-2 mx-3">Price for {{ ticker }}</h1>
+            <h1 class="my-2 mx-3 text-center fade-in">Price for {{ ticker }}</h1>
         {% else %}
-            <h1 class="my-2 mx-3">Error</h1>
+            <h1 class="my-2 mx-3 text-center fade-in">Error</h1>
         {% endif %}
 
 
         <div>
             {% if message is None %}
-                <h2 class="my-2 mx-3">Last Price: ${{ last_price|floatformat:2 }}</h2>
-                <div class="my-2 mx-3", id="stockGraph">
+                <h2 class="my-2 mx-3 text-center fade-in">Latest Price: ${{ last_price|floatformat:2 }}</h2>
+                <div class="my-2 mx-3 text-center fade-in", id="stockGraph">
                     {{ graph_div|safe }}
                 </div>
             {% else %}
-                <p class="my-2 mx-3" style="font-size: 20px;">{{ message }}</p>
+                <p class="my-2 mx-3 text-center fade-in" style="font-size: 20px;">{{ message }}</p>
             {% endif %}
         </div>
 
-        <div>
-            <a class="btn btn-primary my-2 mx-3" href="{% url 'take_in_stock_price' %}">Back</a>
+        <div class="my-2 mx-3 text-center fade-in">
+            <a class="btn btn-primary" href="{% url 'take_in_stock_price' %}">Back to search page</a>
         </div>
 
     </body>

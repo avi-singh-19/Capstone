@@ -2,7 +2,7 @@ var opacity = 0;
 var intervalId = 0;
 
 function fadeIn(){
-    intervalId = setInterval(show,25);
+    intervalId = setInterval(show,20);
 }
 
 function show(){

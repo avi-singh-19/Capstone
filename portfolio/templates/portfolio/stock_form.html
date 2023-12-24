@@ -8,23 +8,26 @@
     </head>
     <body>
 
-        <h1 class="my-2 mx-3">Live Price Lookup Tool</h1>
+        <h1 class="my-2 mx-3 text-center fade-in">Live Price Lookup Tool</h1>
+        <br>
 
         <form method="post" class="my-2 mx-3">
-            <div>
+            <div class="text-center fade-in">
                 {% csrf_token %}
-                <label class="form-label" style="font-size: 20px;">{{ form.ticker.label }}</label>
+                <p class="form-label" style="font-size: 20px;">{{ form.ticker.label }}</p>
                 {{ form.ticker }}
                 <input type="text" name="ticker_entry" id="ticker_entry" autocomplete="off" style="display: none;">
             </div>
-            <div class="form-group">
+            <br>
+            <div class="form-group text-center fade-in">
                 <button class="btn btn-primary" type="submit">Submit</button>
             </div>
         </form>
+        <br>
 
-        <div>
-            <h2 class="my-2 mx-3">Latest searches</h2>
-            <ul>
+        <div class="text-center fade-in">
+            <h2 class="my-2 mx-3">Latest Searches</h2>
+            <ul style="list-style: none;">
                 {% for stock in previous_searches %}
                     <li>{{ stock.ticker }} searched on {{ stock.date_searched }}</li>
                 {% endfor %}
