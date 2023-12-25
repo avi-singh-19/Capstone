@@ -1,6 +1,46 @@
 {% extends "portfolio/layout.html" %}
+{% load static %}
 
 {% block body %}
-    <h1 class="my-2 mx-3 text-center fade-in">Personal Interests</h1>
-    <br>
+    <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 300px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+    </style>
+
+    <div class="fade-in">
+        <h1 class="my-2 mx-3 text-center">Personal Interests</h1>
+
+        <div class="d-flex justify-content-center">
+            <div class="card my-2 mx-3" style="max-width: 750px;">
+              <div class="card-body">
+                Here are some photos chosen by Avi to show off his interests and hobbies.
+              </div>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <img src="{% static 'portfolio/images/hobby_01.png' %}">
+            <img src="{% static 'portfolio/images/hobby_02.png' %}">
+            <img src="{% static 'portfolio/images/hobby_06.png' %}">
+            <img src="{% static 'portfolio/images/hobby_10.png' %}">
+            <img src="{% static 'portfolio/images/hobby_04.png' %}">
+            <img src="{% static 'portfolio/images/hobby_07.png' %}">
+        </div>
+    </div>
+
 {% endblock %}
