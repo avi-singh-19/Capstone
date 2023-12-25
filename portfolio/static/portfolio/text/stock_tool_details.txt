@@ -1,0 +1,4 @@
+Avi developed and submitted this stock price lookup tool as CS50’s Introduction to Programming with Python capstone project.
+He decided to re-engineer the tool to incorporate into this project with better error handling, focus on a more user-friendly
+interface, use of a model to log universal search history on the app and more functionality to manipulate the scatter plot.
+To try the improved application, please use the blue button.

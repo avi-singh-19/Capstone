@@ -12,8 +12,28 @@ def index(request):
     with open(welcome, 'r') as file:
         welcome_content = file.read()
 
-    return render(request, "portfolio/index.html",{
-        'welcome_text': welcome_content
+    professional = os.path.join(settings.BASE_DIR, 'portfolio/static/portfolio/text/professional_details.txt')
+    with open(professional, 'r') as file:
+        professional_text = file.read()
+
+    personal = os.path.join(settings.BASE_DIR, 'portfolio/static/portfolio/text/personal_interests.txt')
+    with open(personal, 'r') as file:
+        personal_text = file.read()
+
+    stock = os.path.join(settings.BASE_DIR, 'portfolio/static/portfolio/text/stock_tool_details.txt')
+    with open(stock, 'r') as file:
+        stock_text = file.read()
+
+    wordle = os.path.join(settings.BASE_DIR, 'portfolio/static/portfolio/text/wordle_details.txt')
+    with open(wordle, 'r') as file:
+        wordle_text = file.read()
+
+    return render(request, "portfolio/index.html", {
+        'welcome_text': welcome_content,
+        'professional_details_text': professional_text,
+        'personal_details_text': personal_text,
+        'stock_text': stock_text,
+        'wordle_text': wordle_text
     })
 
 

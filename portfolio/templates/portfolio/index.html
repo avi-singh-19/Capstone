@@ -16,9 +16,9 @@
     <div class="card my-2 mx-3 fade-in">
       <h3 class="card-header text-center">Professional Details</h3>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Avi's Professional History</h5>
+        <p class="card-text">{{ professional_details_text }}</p>
+        <a href="{% url 'professional_details' %}" class="btn btn-primary">Click here to learn more</a>
       </div>
     </div>
     <br>
@@ -26,9 +26,9 @@
     <div class="card my-2 mx-3 fade-in">
       <h3 class="card-header text-center">Personal Interests</h3>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Avi's Hobbies and Interests</h5>
+        <p class="card-text">{{ personal_details_text }}</p>
+        <a href="{% url 'personal_interests' %}" class="btn btn-primary">Click here to learn more</a>
       </div>
     </div>
     <br>
@@ -36,9 +36,9 @@
     <div class="card my-2 mx-3 fade-in">
       <h3 class="card-header text-center">Project: Stock Application</h3>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Avi's Stock Price Lookup Tool</h5>
+        <p class="card-text">{{ stock_text }}</p>
+        <a href="{% url 'take_in_stock_price' %}" class="btn btn-primary">Click here to use the stock application</a>
       </div>
     </div>
     <br>
@@ -46,9 +46,9 @@
     <div class="card my-2 mx-3 fade-in">
       <h3 class="card-header text-center">Project: Wordle Game</h3>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Avi's Javascript Wordle Game</h5>
+        <p class="card-text">{{ wordle_text }}</p>
+        <a href="{% url 'wordle_game' %}" class="btn btn-primary">Click here to play Wordle</a>
       </div>
     </div>
     <br>

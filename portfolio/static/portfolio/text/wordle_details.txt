@@ -1,0 +1,2 @@
+Avi used Javascript to create this version of the famous online Wordle game. This one has unlimited goes every day with
+a new word for every new game. To try it out, use the blue button.
