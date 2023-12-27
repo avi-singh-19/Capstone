@@ -1,15 +1,47 @@
-# Capstone Project - Personal Portfolio #
+# Avi’s Capstone Web Application
 
-Details to follow
+This project is a web application developed to showcase Avi’s personal interests, professional details, and two small project demonstrations. One of these was a stock price lookup tool developed in Python and the a ‘Wordle’ style word guessing game in JavaScript. The project uses Django, Python, HTML, CSS, and JavaScript and all packages are detailed in the requirements.txt file, generated using the pip3 freeze > requirements.txt.
 
-**Complexities:**
+## Distinctiveness and Complexity
 
-This project reuses the navbar element from previous projects but has unique features that separate it. These include:
-1) Javascript used to fade elements into view for a more professional looking website
-2) Bootstrap elements used to ensure mobile scalability, including manual testing on mobile device (for demo)
-3) Use of yfinance API to implement stock and commodity lookup tool
-4) Use of model to log search history for previous commodity searches
-5) Error handling in place to deal with invalid commodity searches with user focussed error message displays
-6) Use of plotly library to plot price graph chart with ability to manipulate and download as a png
-7) Javascript used to create interactive Wordle game
-8) Wordle Javascript code is able to draw up 5 word grid, reject invalid words, accept valid words, give clues as to correct letters and display the user with a game won/lost
+The project idea was to create a portfolio style website to display personal interests, professional details and to incorporate demonstrations of some Python and JavaScript projects. These two projects include a Python commodity pricing lookup tool and a Wordle style game written in Javascript. 
+
+This project satisfies the distinctiveness and complexity requirements through a number of unique functionalities, such as: the use of JavaScript and CSS to create an animation class to fade elements when loading, mobile scalability with use of Bootstrap and verification of this using manual testing, a commodity pricing lookup tool using the yfinance API with user friendly error handling for invalid searches, search history logging with a unique Django model and use of the plotly library for plotting data, a Wordle game written with JavaScript and an image gallery made using CSS. These are covered in more detail below.
+
+The project has its own unique model which works with the stock price lookup tool and is distinct from other models used in previous submissions. The model's instances are used to maintain a record of searched stock tickers and their associated information, allowing for the retrieval and display of historical search data in this application. The ‘take_in_stock_price’ function in ‘views.py’ uses the model to manage stock data and search history. When a user submits an entry using the form defined in forms.py, the model is used to either create a new object for a new search or retrieve the correct object from a previous search, updating its details and saving it in the search history accordingly.
+
+The two main complexities in this project, the stock price tool and the Wordle style game, make this project distinct from previous submissions as they were written from scratch, include use of APIs to retrieve data from an external source and to plot this data and include features to manipulate and download this plot and include use of JavaScript to interpret front end user inputs and manipulate the displayed page in conjunction with unique CSS classes. 
+
+The commodity pricing tool works using the ‘take_in_stock_price’ function in ‘views.py’, which handles the functionality related to fetching and displaying stock price data based on user input using yfinance and plotly. When the application receives a POST request with a stock ticker name, it validates the form input and retrieves historical stock data using the yfinance library, saves the ticker information in the database, and generates a price graph using plotly. It then renders a webpage showing either the stock price and a graph of historical stock prices or an error message if there is no historical data is available. If the request is not a POST request, it renders a form for users to input stock tickers and uses the application’s ‘Stock’ model to display the last ten searches.
+
+The Wordle game uses the ‘wordle.js’ Javascript file to load CSS defined box classes and grids in the ‘wordle.html’ file. The ‘wordle.js’ code handles user inputs to update the game grid with each new input and to respond to keyboard input for letter guesses. It contains functions for validating words, revealing correct letters with each guess like Wordle, and determining a win or loss and there is a restart button on the page used to generate a new word and start a new game session.
+
+The only feature reused from previous submissions is the navigation bar, found in ‘layout.html’; this feature was reused due it’s professional look and success during mobile testing. However, it was modified to suit the final project submission and therefore not directly copied over.
+  
+## Files Included
+#### ‘static/portfolio’
+Included in the ‘static/portfolio’ directory are a handful of standard resources used across the application. These are split into three subdirectories, ‘images’, ‘js’ and ‘text’, plus one ‘styles.css’ file. The ‘images’ fo’llder contains sixteen different images used across the application and in the CSS gallery in the ‘personal_interests.html’ view. The ‘js’ folder contains three JavaScript files, ‘dictionary.js’ and ‘wordle.js’ are used in conjunction for the Wordle game; ‘dictionary.js’ contains a dictionary of valid five letter words that the game accesses to select a word for the user to guess, ‘wordle.js’ contains the JavaScript functions for validating words, revealing correct letters, sending alerts for a game win or loss or an invalid word error and a restart button to generate a new word and start a new game session. The third JavaScript file is ‘fade.js’, this is called in the layout function and defines the fading properties used by different elements throughout the web application. The function finds all elements with the ‘fade-in’ class and in short, consistent twenty milliseconds intervals increases the opacity from 0 to 1 to create a fade in effect. The ‘text’ file contains different .txt files which are called in as resources in different ‘views.py’ functions to be displayed in different html views. The idea of separating large bodies of text into .txt files and calling those into html views meant that focus could be put on making sure each html view scaled into mobile sizes correctly and also while allowing for bodies of text to be updated and changed without compromising the readability and layout of the html views. Finally, there is a ‘styles.css’ file which contains definitions for the different Wordle box and grid layouts that the ‘wordle.js’ file can use to draw and manipulate the game grids. It also contains definitions for the flip animations used after each guess, similar to the real Wordle game.
+
+#### ‘templates/portfolio’
+The ‘templates/portfolio’ directory contains all the views for the application. All of them are based around the ‘layout.html’ file with an extends command, this file defines the navigation bar present on all of the pages and calls in the Bootstrap and CSS stylesheets and the JavaScript fade function in the ‘static/portfolio/js’ directory. ‘index.html’ forms the home page for the application, in ‘views.py’ the different text elements from the ‘static/portfolio/text’ directory are passed into the ‘index.html’ file and are used in consistently sized Bootstrap cards to create a neat, mobile scalable page with buttons to direct the user to different pages. The ‘personal_interests.html’ file uses inline CSS to create a gallery style page to display six different images in the same size with a transform transition when the images are hovered over with the cursor. The ‘professional_details.html’ page is grouped into different cards, similarly to the ‘index.html’ page, with buttons to take the user to external websites to provide more context on top of the text the user can read in a new tab. This html view also uses images from the ‘static/portfolio/images’ directory to be displayed alongside the text content of each card. The ‘stock_form.html’ and the ‘stock_price.html’ form the commodity pricing lookup tool, the ‘stock_form.html’ displays the form defined in ‘forms.py’ to allow the user to search a commodity ticker as well as the search history from the application. The ‘stock_price.html’ view either displays an error message if no data can be found for a search term or plots a graph of the latest historical pricing data from the last twenty-four hours in intervals of two minutes. The gathering of data and plotting them using yfinance and plotly is handled in ‘views.py’, the ‘stock_price.html’ displays the final graph and latest price using yfinance data. The ‘wordle.html’ is used for the Wordle game, the game’s functionality is defined within ‘wordle.js’ with ‘div’ tags assigned with classes for the JavaScript to draw the game grid and the reset button.  
+
+#### ‘forms.py’
+This file defines a text input form field named ticker which is called in a function in ‘views.py’. The label argument provides a descriptive label to help the user. 
+
+#### 'models.py'
+The ‘models.py’ file defines the ‘Stock’ model which is used to store the search history from the commodity price lookup tool. It stores the searched ticker name and the time at which it was searched and is used in ‘views.py’ to display a list of the ten most recent ticker searches
+
+#### 'urls.py'
+This file contains a total of five different url paths, one for the home page, the stock lookup tool, the professional details page, the personal interests page and the Wordle game page.
+
+#### 'views.py'
+‘views.py’ contains a number of functions relating to the different html views. The ‘index’ and ‘professional_details’ functions pass through different text files from the ‘static/portfolio/text’ directory to be displayed on the home page. The biggest function in this page is the ‘take_in_stock_price’ function, used for the commodity look up tool. First, it calls in all previous searches by accessing all of the ‘Stock’ model entries. Next, after a post request is made using the input form, the input is searched using yfinance, and data for the last twenty-four hours of stock pricing at two-minute intervals is gathered and stored. If no data is found, the function returns an error message to be displayed to user via the html view. The ticker is either retrieved from the model’s stored entries or a new entry is created, in both scenarios the time searched is recorded to be displayed on the HTML view. The fetched historical pricing data is passed into plotly to make a scatter plot with markers to clearly show the changes in pricing, and finally, the ticker, corresponding ticker price, any relevant error messages and the plotly graph object is passed to the html view.
+
+## Running the Application
+To run the application locally, ensure Django is installed, clone the repository to your machine and in the project directory, execute in order:
+
+‘pip install -r requirements.txt’
+‘python manage.py runserver’
+
+Now, the web app can be accessed via a browser at http://localhost:8000.
+
